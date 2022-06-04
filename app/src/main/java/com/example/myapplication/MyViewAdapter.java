@@ -23,11 +23,11 @@ public class MyViewAdapter extends ArrayAdapter<Student> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         Student student = getItem(position);
-        convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_main, parent, false);
+        convertView = LayoutInflater.from(getContext()).inflate(R.layout.student_activity, parent, false);
         TextView textViewName =  convertView.findViewById(R.id.name);
         TextView textViewCampus = convertView.findViewById(R.id.campus);
-        TextView textViewId = convertView.findViewById(R.id.roll);
-        ImageView imageView = convertView.findViewById(R.id.imageView3);
+        TextView textViewId = convertView.findViewById(R.id.Roll);
+        ImageView imageView = convertView.findViewById(R.id.imageView);
         textViewName.setText(student.name);
         textViewCampus.setText(student.campus);
         textViewId.setText(student.rollNumber);
