@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,16 +24,14 @@ public class MyViewAdapter extends ArrayAdapter<Student> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         Student student = getItem(position);
         convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_main, parent, false);
-        TextView textViewName =  convertView.findViewById(R.id.textViewName);
-        TextView textViewCampus = convertView.findViewById(R.id.textViewCampus);
-        TextView textViewId = convertView.findViewById(R.id.textViewID);
-        ImageView imageView = convertView.findViewById(R.id.imageView);
+        TextView textViewName =  convertView.findViewById(R.id.name);
+        TextView textViewCampus = convertView.findViewById(R.id.campus);
+        TextView textViewId = convertView.findViewById(R.id.roll);
+        ImageView imageView = convertView.findViewById(R.id.imageView3);
         textViewName.setText(student.name);
         textViewCampus.setText(student.campus);
         textViewId.setText(student.rollNumber);
         imageView.setImageResource(student.imageID);
         return convertView;
     }
-
-
 }

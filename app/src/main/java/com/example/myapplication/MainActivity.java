@@ -22,9 +22,13 @@ EditText editText;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView=findViewById(R.id.listView);
-        editText=findViewById(R.id.editText);
-        ArrayList<String> studentlist=new ArrayList<String>();
-
-
+        ArrayList<Student> list=new ArrayList<Student>();
+        list.add(new Student("Usama","Lhr","1",R.drawable.ic_launcher_background));
+        list.add(new Student("Usman","Lhr","2",R.drawable.ic_launcher_background));
+        list.add(new Student("ahmad","skp","3",R.drawable.ic_launcher_background));
+        list.add(new Student("osama","isb","4",R.drawable.ic_launcher_background));
+        MyViewAdapter adapter = new MyViewAdapter(this, list);
+        ListView listView = findViewById(R.id.listView);
+        listView.setAdapter(adapter);
     }
 }
